@@ -1,0 +1,23 @@
+#working 
+--- # installing redis
+- hosts: ubuntu
+  remote_user: vagrant
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  tasks:
+   - name: Install Redis On Ubuntu Server
+     apt: name=redis-server state=latest
+   - name: edit config file and set memcache
+     blockinfile:
+        dest: /etc/redis/redis.conf
+        content: |
+          maxmemory 128mb
+          maxmemory-policy allkeys-lru
+        state: present
+     notify:
+       - restart redis
+  handlers:
+   - name: restart redis   
+     service: name=redis-server state=restarted

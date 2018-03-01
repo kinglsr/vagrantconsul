@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/lib/redis":{"guestpath":"/var/lib/redis","hostpath":"C:/Users/KnoMaD/capvagrant","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"C:/Users/KnoMaD/capvagrant","disabled":false,"__vagrantfile":true}}}
